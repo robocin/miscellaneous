@@ -91,6 +91,7 @@ fi
 echo -e "${YELLOW}Installing Qt...${NC}"
 ls /home/$USER/.local/share/Qt
 if [ $? != 0 ]; then
+	sudo apt-get install -y libgl1-mesa-dev
 	wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run
 	if [ "$?" != "0" ]; then
 		echo -e "${RED}[Error] Could not download Qt Creator${NC}"
