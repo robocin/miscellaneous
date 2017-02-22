@@ -148,10 +148,10 @@ fi
 
 
 echo "${YELLOW}Installing OpenCV...${NC}"
-echo -n "OpenCV will be compiled from source and it takes a looooong time. Are you sure you want to install it? [Y/N]"
+echo -n "OpenCV will download some dependencies and it takes a looooong time. Are you sure you want to install it? [y/n]"
 read input
 
-if [ "$input" = "Y" ]; then
+if [ "$input" = "y" ]; then
 	sudo apt-get update
 	if [ "$?" != "0" ]; then
 		echo "${RED}[Error] Could not install OpenCV dependencies${NC}"
@@ -240,7 +240,7 @@ if [ "$input" = "Y" ]; then
 	fi
 
 	# compile and install
-	echo -n "OpenCV will be compiled from source and it takes a looooong time. Are you ${RED}REALLY${NC} sure you want to install it? [Y/N]"
+	echo -n "OpenCV will be compiled from source and it takes a looooong time. Are you ${RED}REALLY${NC} sure you want to install it? [y/n]"
 	read input
 
 	if [ "$input" = "y" ]; then
