@@ -106,7 +106,7 @@ if [ $? != 0 ]; then
 		exit 1
 	fi
 
-	echo "${YELLOW}In \"Select components\", under \"Qt 5.7\" deselect \"Android ARMv7\"${NC}"
+	echo "${YELLOW}In \"Select components\", deselect \"Qt 5.8\", select \"Qt 5.7\" and under \"Qt 5.7\" deselect \"Android ARMv7\", \"Android x86\" and \"Sources\"${NC}"
 	./qt-unified-linux-x64-online.run
 	if [ "$?" != "0" ]; then
 		echo "${RED}[Error] Could not install Qt Creator${NC}"
