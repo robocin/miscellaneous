@@ -62,6 +62,9 @@ if [ $? != 0 ]; then
 				echo "${RED}[Error] You don't have a file named \"arduino-1.8.1-linux64.tar.xz\"!${NC}"
 				exit 1
 			fi
+			if [ -f platformio-atom-linux-x86_64.deb ]; then
+			  rm platformio-atom-linux-x86_64.deb
+			fi
 
 			echo "${GREEN}[DONE] Atom and PlatformIO installed${NC}"
 			break
