@@ -23,6 +23,9 @@ if [ $? != 0 ]; then
 			fi
 			cd arduino-1.8.1
 			sudo ./install.sh
+			cd ..
+			rm arduino-1.8.1-linux64.tar.xz
+			rm arduino-1.8.1 -r
 			echo "${GREEN}[DONE] Arduino installed${NC}"
 			break
 		else
@@ -112,6 +115,7 @@ if [ $? != 0 ]; then
 		echo "${RED}[Error] Could not install Qt Creator${NC}"
 		exit 1
 	fi
+	rm qt-unified-linux-x64-online.run
 
 	echo "${GREEN}[DONE] Qt Creator installed${NC}"
 else
@@ -134,6 +138,7 @@ if [ $? != 0 ]; then
 		echo "${RED}[Error] Could not download V-REP${NC}"
 		exit 1
 	fi
+	rm V-REP_PRO_EDU_V3_3_2_64_Linux.tar.gz
 
 	echo "${GREEN}[DONE] V-REP downloaded${NC}"
 else
@@ -254,6 +259,9 @@ if [ "$input" = "Y" ]; then
 			echo "${RED}[Error] Could not run \"make install\" on OpenCV directory${NC}"
 			exit 1
 		fi
+		cd ../..
+		rm opencv-2.4.11.zip
+		rm -r opencv-2.4.11
 
 		echo "${GREEN}[DONE] OpenCV installed${NC}"
 	fi

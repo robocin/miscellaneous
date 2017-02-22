@@ -21,6 +21,9 @@ if [ $? != 0 ]; then
 			fi
 			cd arduino-1.8.1
 			sudo ./install.sh
+			cd ..
+			rm arduino-1.8.1-linux64.tar.xz
+			rm arduino-1.8.1 -r
 			break
 		else
 			echo "${RED}Spell correctly...${NC}"
