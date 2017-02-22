@@ -4,6 +4,8 @@ DARK_GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 NC='\033[0m'
 
+cd /home/$USER/Downloads
+
 echo "${YELLOW}Installing Arduino...${NC}"
 ls /home/$USER/Arduino
 if [ $? != 0 ]; then

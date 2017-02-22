@@ -3,6 +3,8 @@ GREEN='\033[1;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
+cd /home/$USER/Downloads
+
 ls /home/$USER/Arduino
 if [ $? != 0 ]; then
 	while true; do
