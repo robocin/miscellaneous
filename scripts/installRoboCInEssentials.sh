@@ -25,7 +25,6 @@ if [ $? != 0 ]; then
 			sudo ./install.sh
 			cd ..
 			rm arduino-1.8.1-linux64.tar.xz
-			rm arduino-1.8.1 -r
 			echo "${GREEN}[DONE] Arduino installed${NC}"
 			break
 		else
@@ -264,7 +263,6 @@ if [ "$input" = "y" ]; then
 		fi
 		cd ../..
 		rm opencv-2.4.11.zip
-		rm -r opencv-2.4.11
 
 		echo "${GREEN}[DONE] OpenCV installed${NC}"
 	fi

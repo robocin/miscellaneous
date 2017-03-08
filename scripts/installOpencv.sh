@@ -27,7 +27,6 @@ make all -j4 # 4 cores
 sudo make install
 cd ../..
 rm opencv-2.4.11.zip
-rm -r opencv-2.4.11
 
 # ignore libdc1394 error http://stackoverflow.com/questions/12689304/ctypes-error-libdc1394-error-failed-to-initialize-libdc1394
 
