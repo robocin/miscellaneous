@@ -2,13 +2,18 @@
 This article will show to you how to have a code accepted by our team (Under construction)
 ## Table of contents
 1. [Install DoxyDoxygen](#)
-2. [Code Style](#)
-
-    2.1 [Header](#)
-    2.2 [If not defined](#)
-    2.3 [Struct Model](#)
-    2.4 [Class Model](#)
-    2.5 [Method Model](#)
+2. [Git](#) 
+2.1 [Clone](#)
+2.2 [Create a Branch](#)
+2.3 [Update/Rebase Branch](#)
+2.4 [Upload](#)
+2.5 [Mistake](#)
+3. [Code Style](#)
+3.1 [Header](#)
+3.2 [If not defined](#)
+3.3 [Struct Model](#)
+3.4 [Class Model](#)
+3.5 [Method Model](#)
 
     
 ## Install [DoxyDoxygen](https://packagecontrol.io/packages/DoxyDoxygen)
@@ -20,6 +25,42 @@ On the next windows write the follow
     
     DoxyDoxygen 
 After that, just select the part of code and press **Alt Q**
+## Git
+This section will help you to start use the Git
+### Clone
+```sh
+    git clone git@git.cin.ufpe.br:gmb/robocin-vssl.git
+```
+### Create a Branch
+After you assing a task in trello you should create a new branch
+##### git checkout -b (**Team**)_(**Number of Task**)_(**Info**)_(**login/name**)
+###### exemple:
+```sh
+    git checkout -b stg_34_ballGauss_renato
+    git checkout -b vision_27_setTrackAlgorithm_chcp
+```
+### Update/Rebase Branch
+###### Remember that after you create a branch, someone may update the master branch, to avoid conflicts, you need to update your local branch 
+```sh
+    git fetch
+    git rebase origin/master
+```
+### Upload
+```sh
+    git add (modify files) 
+    git commit -m " a small text about the modify files" 
+    git push origin (Team)_(Number of Task)_(Info)_(login/name)
+```
+```c++
+# git add --all is forbidden
+# Remember to move your trelo card to "To integrate" 
+```
+### Mistake 
+##### It is ok to make a mistake, but you need to correct it!
+```sh
+    git commit --amend
+    git push origin (Team)_(Number of Task)_(Info)_(login/name) -f
+```
 
 ## Code Style
 ### Header
@@ -85,6 +126,11 @@ After that, just select the part of code and press **Alt Q**
 	int foo(Entity entities[], int var);
 ```
 
+### Variable
+###### If your class need a class Variable, in .h file, we high encorage to create with a underscore
+```c++
+    cv::Mat _frame;
+```
     
 
 
