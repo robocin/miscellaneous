@@ -10,26 +10,30 @@ echo "${YELLOW}Installing Arduino...${NC}"
 ls /home/$USER/Arduino
 if [ $? != 0 ]; then
 	while true; do
-		echo "${YELLOW}You should download the Arduino IDE installer, version 1.8.1, from \"https://www.arduino.cc/en/Main/Software\"${NC}"
-
-		echo -n "When you download the software, type \"done\", followed by [ENTER]... "
+		echo -n "Do you want to install Arduino IDE? [y/n]"
 		read input
 
-		if [ "$input" = "done" ]; then
-			tar xf arduino-1.8.1-linux64.tar.xz
-			if [ "$?" != "0" ]; then
-				echo "${RED}[Error] You don't have a file named \"arduino-1.8.1-linux64.tar.xz\"!${NC}"
-				exit 1
+		if [ "$input" = "y" ]; then
+			echo "${YELLOW}Downloading the Arduino IDE installer, version 1.8.1, from dropbox${NC}"
+
+			wget https://www.dropbox.com/s/jqv52pgkb5pwpi5/arduino-1.8.1-linux64.tar.xz
+
+			if [ "$input" = "done" ]; then
+				tar xf arduino-1.8.1-linux64.tar.xz
+				if [ "$?" != "0" ]; then
+					echo "${RED}[Error] You don't have a file named \"arduino-1.8.1-linux64.tar.xz\"!${NC}"
+					exit 1
+				fi
+				cd arduino-1.8.1
+				sudo ./install.sh
+				cd ..
+				rm arduino-1.8.1-linux64.tar.xz
+				echo "${GREEN}[DONE] Arduino installed${NC}"
+				break
+			else
+				echo "${RED}Spell correctly...${NC}"
 			fi
-			cd arduino-1.8.1
-			sudo ./install.sh
-			cd ..
-			rm arduino-1.8.1-linux64.tar.xz
-			echo "${GREEN}[DONE] Arduino installed${NC}"
-			break
-		else
-			echo "${RED}Spell correctly...${NC}"
-		fi
+		done
 	done
 else
 	echo "${DARK_GREEN}Seems like you already have Arduino installed. Skipting that installation...${NC}"
