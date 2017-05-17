@@ -9,3 +9,6 @@ echo "SUBSYSTEM==\"tty\", ATTRS{idVendor}==\"10c4\", ATTRS{idProduct}==\"ea60\",
 
 echo "sudo udevadm control --reload-rules"
 sudo udevadm control --reload-rules
+
+sudo usermod -a -G dialout $USER
+
