@@ -53,12 +53,12 @@ if [ $? != 0 ]; then
 			#xdg-open https://atom.io/packages/linter-clang
 			sudo apt-get install -y clang
 			if [ "$?" != "0" ]; then
-				echo "${RED}[Error] You don't have a file named \"arduino-1.8.1-linux64.tar.xz\"!${NC}"
+				echo "${RED}[Error] Could not install clang!${NC}"
 				exit 1
 			fi
 			apm install linter-clang
 			if [ "$?" != "0" ]; then
-				echo "${RED}[Error] You don't have a file named \"arduino-1.8.1-linux64.tar.xz\"!${NC}"
+				echo "${RED}[Error] Could not install linter-clang!${NC}"
 				exit 1
 			fi
 			if [ -f platformio-atom-linux-x86_64.deb ]; then
