@@ -16,7 +16,7 @@ if [ $? != 0 ]; then
 		read input
 
 		if [ "$input" = "done" ]; then
-			tar xf arduino-1.8.1-linux64.tar.xz
+			tar xf arduino-1.8.5-linux64.tar.xz
 			if [ "$?" != "0" ]; then
 				echo "${RED}[Error] You don't have a file named \"arduino-1.8.1-linux64.tar.xz\"!${NC}"
 				exit 1
