@@ -61,7 +61,18 @@ After you assing a task in trello you should create a new branch
     git commit --amend
     git push origin (Team)_(Number of Task)_(Info)_(login/name) -f
 ```
+### Fix issue 
+##### If you just have fixed an issue, you can close it with a commit
+If the issue is from the same repository as the commit, do as following,
+where issue_number is the number of the issue.
+```sh
+    git commit -m "Fix #issue_number"
+```
 
+If the issue is from another repository, do as following:
+```sh
+    git commit -m "Close username/repository#issue_number"
+```
 ## Code Style
 ### Header
 ##### First at All every header file need to have our default message
